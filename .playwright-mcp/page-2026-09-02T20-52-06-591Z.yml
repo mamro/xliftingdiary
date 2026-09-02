@@ -1,0 +1,45 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - button "Sign in" [ref=e3]
+    - button "Sign up" [active] [ref=e4]
+  - button "Open Next.js Dev Tools" [ref=e23] [cursor=pointer]
+  - alert [ref=e27]
+  - generic [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e33]:
+        - heading "Create your account" [level=1] [ref=e34]
+        - paragraph [ref=e35]: Welcome! Please fill in the details to get started.
+      - generic [ref=e36]:
+        - button "Sign in with Google Continue with Google" [ref=e39] [cursor=pointer]:
+          - generic [ref=e40]:
+            - generic "Sign in with Google" [ref=e42]
+            - generic [ref=e43]: Continue with Google
+        - paragraph [ref=e46]: or
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e52]:
+              - generic [ref=e53]: Username
+              - textbox "Username" [ref=e55]:
+                - /placeholder: Enter your username
+            - generic [ref=e59]:
+              - generic [ref=e60]: Email address
+              - textbox "Email address" [ref=e62]:
+                - /placeholder: Enter your email address
+            - generic [ref=e66]:
+              - generic [ref=e67]: Password
+              - generic [ref=e69]:
+                - textbox "Password" [ref=e70]:
+                  - /placeholder: Create a password
+                - button "Show password" [ref=e71] [cursor=pointer]
+          - button "Continue" [ref=e78] [cursor=pointer]
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - generic [ref=e84]: Already have an account?
+        - link "Sign in" [ref=e85] [cursor=pointer]:
+          - /url: http://localhost:3001/sign-in#/?sign_up_fallback_redirect_url=http%3A%2F%2Flocalhost%3A3001%2F&sign_in_fallback_redirect_url=http%3A%2F%2Flocalhost%3A3001%2F&redirect_url=http%3A%2F%2Flocalhost%3A3001%2F
+      - generic [ref=e87]:
+        - generic [ref=e89]:
+          - paragraph [ref=e90]: Secured by
+          - link "Clerk logo" [ref=e91] [cursor=pointer]:
+            - /url: https://go.clerk.com/components
+        - paragraph [ref=e97]: Development mode
