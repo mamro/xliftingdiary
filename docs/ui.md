@@ -24,3 +24,24 @@ All UI in this project MUST be built exclusively from [shadcn/ui](https://ui.sha
 2. If it doesn't, install it with the shadcn/ui CLI: `npx shadcn@latest add <component>`.
 3. Import and compose the installed component(s) in your page/feature code.
 4. Never edit generated shadcn/ui component internals to work around a one-off need — prefer composition, variants, or props the component already exposes.
+
+## Rule: date formatting via date-fns
+
+All dates displayed in the UI MUST be formatted using [date-fns](https://date-fns.org), using the `do MMM yyyy` format — an ordinal day, abbreviated month, and full year:
+
+```
+1st Sep 2025
+2nd Aug 2025
+3rd Jan 2026
+4th Jun 2024
+```
+
+```ts
+import { format } from "date-fns";
+
+format(date, "do MMM yyyy");
+```
+
+- **Do not** format dates manually with `Date` string methods, `Intl.DateTimeFormat`, or ad-hoc string concatenation.
+- **Do not** introduce another date library (Moment, Luxon, Day.js, etc.) — date-fns is the only date-handling dependency for this project.
+- Apply this format consistently everywhere a date is shown to the user (workout dates, timestamps, etc.), unless a specific screen has an explicitly different, agreed-upon format.
