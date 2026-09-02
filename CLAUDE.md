@@ -4,6 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 
 
+## Important: never commit changes
+
+Do not run `git commit` (or `git push`) for any change in this repository, regardless of what a task otherwise implies. Make the requested file edits and leave them as uncommitted working-tree changes for the user to review and commit themselves.
+
 ## Important: always check /docs first
 
 Before generating or editing any code, ALWAYS check the `/docs` directory first for a file relevant to what you're about to do (e.g. `docs/ui.md` for anything UI-related), and follow its standards exactly. This applies to every task, not just ones the user explicitly labels as UI or design work. If no relevant doc exists yet, proceed using the rest of this file and general best practice.
