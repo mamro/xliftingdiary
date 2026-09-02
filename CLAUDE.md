@@ -4,6 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 
 
+## Important: always check /docs first
+
+Before generating or editing any code, ALWAYS check the `/docs` directory first for a file relevant to what you're about to do (e.g. `docs/ui.md` for anything UI-related), and follow its standards exactly. This applies to every task, not just ones the user explicitly labels as UI or design work. If no relevant doc exists yet, proceed using the rest of this file and general best practice.
+
 ## Project
 
 xliftingdiary is a Next.js (App Router) project, currently at the freshly-scaffolded `create-next-app` stage — no custom routes, components, or data layer exist yet beyond `src/app/page.tsx` and `src/app/layout.tsx`.
