@@ -2,37 +2,31 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Project Overview
 
-
-## Important: never commit changes
-
-Do not run `git commit` (or `git push`) for any change in this repository, regardless of what a task otherwise implies. Make the requested file edits and leave them as uncommitted working-tree changes for the user to review and commit themselves.
-
-## Important: always check /docs first
-
-Before generating or editing any code, ALWAYS check the `/docs` directory first for a file relevant to what you're about to do (e.g. `docs/ui.md` for anything UI-related), and follow its standards exactly. This applies to every task, not just ones the user explicitly labels as UI or design work. If no relevant doc exists yet, proceed using the rest of this file and general best practice.
-
-## Project
-
-xliftingdiary is a Next.js (App Router) project, currently at the freshly-scaffolded `create-next-app` stage — no custom routes, components, or data layer exist yet beyond `src/app/page.tsx` and `src/app/layout.tsx`.
-
-Stack: Next.js 16.3.4, React 19.2.8, TypeScript (strict), Tailwind CSS v4 (via `@tailwindcss/postcss`), ESLint 9 flat config (`eslint-config-next`).
+This is a Next.js 15.5.3 application with TypeScript and Tailwind CSS v4, using the App Router architecture with Turbopack enabled for both development and production builds.
 
 ## Commands
 
-- `npm run dev` — start the dev server (http://localhost:3000)
-- `npm run build` — production build
-- `npm run start` — run the production build
-- `npm run lint` — ESLint (flat config in `eslint.config.mjs`)
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production with Turbopack
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-There is no test runner configured yet.
+## Code Generation Guidelines
 
-## Architecture notes
+**IMPORTANT**: When generating any code, ALWAYS first refer to the relevant documentation files within the `/docs` directory to understand existing patterns, conventions, and best practices before implementation:
 
-- App Router under `src/app/`. Path alias `@/*` maps to `src/*` (see `tsconfig.json`).
-- Styling is Tailwind v4, configured through PostCSS (`postcss.config.mjs`), with global styles in `src/app/globals.css`.
-- `next.config.ts` is currently empty — no custom Next.js config yet.
+- /docs/auth.md
+- /docs/data-fetching.md
+- /docs/data-mutations.md
+- /docs/routing.md
+- /docs/server-components.md
+- /docs/ui.md
 
-## Important: this is not the Next.js you know
+## Architecture
 
-this Next.js version may have breaking API/convention changes relative to training data. Before writing Next.js code (routing, data fetching, config, etc.), check the relevant guide under `node_modules/next/dist/docs/` (`01-app`, `02-pages`, `03-architecture`, `04-community`) rather than relying on prior knowledge, and follow any deprecation notices found there.
+- **App Router**: Located at `src/app/` with `layout.tsx` and `page.tsx` files
+- **Styling**: Tailwind CSS v4 with PostCSS configuration
+- **Path Alias**: `@/*` maps to `./src/*` for cleaner imports
+- **Font System**: Uses Geist fonts configured in the root layout
