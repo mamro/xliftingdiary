@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { format, parseISO } from "date-fns";
 
@@ -12,6 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import type { WorkoutForDate } from "@/data/workouts";
 
@@ -63,9 +65,18 @@ export function DashboardView({
         </div>
 
         <div className="flex-1">
-          <h2 className="mb-4 text-lg font-medium text-zinc-900 dark:text-zinc-50">
-            {format(selectedDate, DATE_FORMAT)}
-          </h2>
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+              {format(selectedDate, DATE_FORMAT)}
+            </h2>
+            <Button
+              size="sm"
+              nativeButton={false}
+              render={<Link href="/dashboard/workout/new" />}
+            >
+              New workout
+            </Button>
+          </div>
 
           {workouts.length === 0 ? (
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
